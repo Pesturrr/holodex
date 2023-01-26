@@ -67,6 +67,9 @@ class HolodexHttpClient:
     async def get_live_streams(self, params: dict[str, Any]) -> Any:
         return await self.request("GET", f"/live", params=params)
 
+    async def get_live_streams_from_group(self, channels: str) -> Any:
+        return await self.request("GET", f"/users/live", params={"channels": channels})
+
     async def get_video(self, video_id: str, params: dict[str, Any]) -> Any:
         return await self.request("GET", f"/videos/{video_id}", params=params)
 
