@@ -76,7 +76,7 @@ class HolodexClient(HolodexHttpClient):
 
     async def live_streams_from_group(
         self,
-        channels: str
+        channels: list[str]
     ) -> Live:
         return Live(await self.get_live_streams_from_group(channels))
 
