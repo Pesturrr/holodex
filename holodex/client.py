@@ -74,11 +74,11 @@ class HolodexClient(HolodexHttpClient):
         params = self.__get_params(locals())
         return Live(await self.get_live_streams(params))
 
-    async def live_streams_from_group(
+    async def live_streams_from_list(
         self,
         channels: list[str]
     ) -> Live:
-        return Live(await self.get_live_streams_from_group(channels))
+        return Live(await self.get_live_streams_from_list(channels))
 
     async def video(self, video_id: str) -> Video:
         params = {"c": 1, "lang": "all"}
